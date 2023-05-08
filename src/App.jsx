@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import btnImage from "./assets/images/icon-arrow.svg";
+import btnImage from "./assets/icon-arrow.svg";
 
 function App() {
   const [day, setDay] = useState("");
