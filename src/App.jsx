@@ -19,7 +19,7 @@ function App() {
   const currentMonth = today.getMonth() + 1;
   const currentYear = today.getFullYear();
 
-  let normalClass = "border-2 border-black";
+  let normalClass = "border-2 border-lightgrey";
   let errorClass = "border-2 border-black";
 
   const calculateDate = () => {
@@ -59,11 +59,11 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div>
+    <div className="">
+      <div className="container w-[40vh] bg-white flex justify-center flex-col items-start m-auto border-2 border-black">
         {/*Day submit */}
         <form action="submit">
-          <p className="uppercase">day</p>
+          <p className="uppercase text-smokeygrey">day</p>
           <input
             type="text"
             className={
@@ -94,7 +94,7 @@ function App() {
 
         {/*Month submit*/}
         <form action="submit">
-          <p className="uppercase">month</p>
+          <p className="uppercase text-smokeygrey">month</p>
           <input
             type="text"
             className={
@@ -126,7 +126,7 @@ function App() {
         {/*Year submit */}
 
         <form action="submit">
-          <p className="uppercase">year</p>
+          <p className="uppercase text-smokeygrey">year</p>
           <input
             type="text"
             className={year > currentYear ? errorClass : normalClass}
@@ -144,16 +144,31 @@ function App() {
             must be in the past
           </p>
         )}
-      </div>
 
-      <div className="line w-20 h-[1.5px] m-2 bg-slate-400 "></div>
-      <button className=" border border-black" onClick={calculateDate}>
-        <img className="bg-slate-700" src={btnImage} alt="" />
-      </button>
-      <div className="resultContainer">
-        <h1>{Number.isNaN(resultYear) ? "--" : resultYear}years</h1>
-        <h1>{Number.isNaN(resultMonth) ? "--" : resultMonth}months</h1>
-        <h1>{Number.isNaN(resultDay) ? "--" : resultDay}days</h1>
+        <div className="line w-20 h-[1.5px] m-2 bg-lightgrey"></div>
+        <button className=" bg-purple rounded-full" onClick={calculateDate}>
+          <img className="bg-slate-700" src={btnImage} alt="" />
+        </button>
+        <div className="resultContainer">
+          <h1 className="text-black">
+            <span className="text-red-800 text-4xl m-2">
+              {Number.isNaN(resultYear) ? "--" : resultYear}
+            </span>
+            years
+          </h1>
+          <h1 className="text-black">
+            <span className="text-purple text-4xl m-2">
+              {Number.isNaN(resultMonth) ? "--" : resultMonth}
+            </span>
+            months
+          </h1>
+          <h1 className="text-black text-2xl">
+            <span className="text-red-800 text-4xl m-2">
+              {Number.isNaN(resultDay) ? "--" : resultDay}
+            </span>
+            days
+          </h1>
+        </div>
       </div>
     </div>
   );
