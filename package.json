@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://magyareper.github.io/",
+  "homepage": "https://magyareper.github.io/AgeApp",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
